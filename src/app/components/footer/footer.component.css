@@ -1,0 +1,65 @@
+footer {
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333333fd; /* Color de texto oscuro */
+    padding: 40px 0; /* Espaciado superior e inferior */
+    border-top: 2px solid #d4af37; /* Línea dorada en la parte superior */
+}
+
+
+/* CSS para ajustar el espaciado */
+.footer-text {
+    margin-bottom: 10px; /* Ajusta este valor según sea necesario */
+}
+
+.footer-contact {
+    margin-bottom: 20px; /* Ajusta este valor según sea necesario */
+}
+
+.col-lg-4.mb-4 {
+    margin-bottom: 10px; /* Ajusta el margen inferior de las columnas */
+}
+
+h5 {
+    color: #d4af37; /* Color dorado suave para encabezados */
+    margin-bottom: 20px;
+    font-weight: bold; /* Negrita para encabezados */
+    text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+/* Estilos para los enlaces */
+a {
+    text-decoration: none; /* Sin subrayado */
+    color: #d4af37; /* Color dorado suave */
+    transition: color 0.3s, transform 0.3s; /* Transición suave para el color y transformación */
+}
+
+a:hover {
+    color: #b09e30; /* Color dorado más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+/* Animación de entrada */
+footer {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards; /* Aplicar animación */
+}
+
+/* Definición de la animación */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#footer-bottom {
+    background-color: #d4af37; /* Cambia este color al que desees */
+    color: white; /* Asegúrate de que el texto sea legible */
+    font-weight: bold; /* Negrita para el texto */
+    padding: 10px 0; /* Espaciado vertical */
+}
+
+#footer-bottom:hover {
+    background-color: #b09e30; /* Color dorado más oscuro al pasar el mouse */
+}

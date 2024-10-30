@@ -1,0 +1,97 @@
+/* Estilo general para el contenedor */
+.container {
+    background-color: #ffffff; /* Color de fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    transition: transform 0.3s; /* Transición para el contenedor */
+}
+
+/* Efecto hover para el contenedor */
+.container:hover {
+    transform: scale(1.02); /* Efecto de aumento al pasar el mouse */
+}
+
+/* Estilo para el encabezado */
+h2 {
+    color: #b8860b; /* Color dorado para el texto */
+    font-weight: bold; /* Negrita */
+    transition: color 0.3s; /* Transición para el color */
+}
+
+/* Efecto hover para el encabezado */
+h2:hover {
+    color: #ffd700; /* Color dorado más brillante al pasar el mouse */
+}
+
+/* Estilo para la tabla */
+.table {
+    width: 100%; /* Ancho completo */
+    margin-top: 20px; /* Espaciado superior */
+    border-collapse: collapse; /* Colapsar bordes */
+    background-color: #ffffff; /* Color de fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Para que los bordes redondeados se apliquen */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+
+/* Estilo para las celdas de la tabla */
+.table th, .table td {
+    padding: 12px; /* Espaciado interno */
+    text-align: left; /* Alinear texto a la izquierda */
+    border-bottom: 1px solid #b8860b; /* Línea divisoria dorada entre filas */
+    transition: background-color 0.3s; /* Transición para el fondo */
+}
+
+/* Estilo para el encabezado de la tabla */
+.table th {
+    background-color: #b8860b; /* Color de fondo dorado para el encabezado */
+    color: white; /* Color del texto del encabezado */
+}
+
+/* Estilo para las filas al pasar el mouse */
+.table tr:hover {
+    background-color: rgba(255, 215, 0, 0.2); /* Color de fondo dorado claro al pasar el mouse */
+    transform: scale(1.01); /* Efecto de aumento al pasar el mouse */
+}
+
+/* Estilo para el cuadro de la contraseña */
+input[type="password"] {
+    border: 1px solid #ced4da; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 8px; /* Espaciado interno */
+    width: 100%; /* Ancho completo */
+    box-sizing: border-box; /* Incluir padding en el ancho total */
+    background-color: #f8f9fa; /* Color de fondo claro */
+    transition: border-color 0.3s; /* Transición para el borde */
+}
+
+/* Efecto focus para el cuadro de la contraseña */
+input[type="password"]:focus {
+    border-color: #b8860b; /* Borde dorado al enfocar */
+    outline: none; /* Sin contorno */
+}
+
+/* Estilo para los botones */
+.btn {
+    margin: 0 5px; /* Espaciado entre botones */
+    background-color: #b8860b; /* Color dorado para los botones */
+    color: white; /* Color del texto de los botones */
+    border: none; /* Sin borde */
+    border-radius: 6px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+/* Efecto hover para los botones */
+.btn:hover {
+    background-color: #ffd700; /* Color dorado más brillante al pasar el mouse */
+    transform: translateY(-2px); /* Levantar el botón al pasar el mouse */
+}
+
+/* Estilo para el grupo de botones */
+.btn-group {
+    display: flex; /* Flex para alinear botones */
+    justify-content: flex-start; /* Alinear a la izquierda */
+    margin-top: 20px; /* Espaciado superior */
+}

@@ -1,0 +1,41 @@
+<div class="container py-5">
+    <h2 class="mb-5">Roles</h2>
+    
+    <div class="text-end">
+        <button class="btn btn-primary" routerLink="/newRol">
+            Nuevo Rol
+        </button>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+        </tr>
+        </thead>
+        <tbody>
+            @for(rol of roles;track rol.id )
+            {
+                <tr>
+                    <td>{{rol.id}}</td>
+                    <td>{{rol.name}}</td>
+                    <td>
+                        <div class="btn-group">
+                        <button class="btn btn-primary">
+                            Editar
+                        </button>
+                        <button class="btn btn-danger">
+                            Eliminar
+                        </button>
+                   </div>
+                    </td>
+                   
+                </tr>
+            }
+        </tbody>
+        
+    </table>
+    </div>
+    
+    

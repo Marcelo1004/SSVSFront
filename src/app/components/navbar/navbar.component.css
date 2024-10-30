@@ -1,0 +1,54 @@
+.bg-white {
+    background-color: #ffffff; /* Blanco */
+}
+
+.navbar {
+    padding: 15px 20px; /* Espaciado del navbar */
+    border-bottom: 3px solid #d4af37; /* Borde dorado */
+    transition: background-color 0.5s; /* Transición suave al pasar el mouse */
+}
+.navbar-logo {
+    width: 50px; /* Ajusta el tamaño según sea necesario */
+    height: auto; /* Mantiene la proporción del logo */
+    margin-right: 10px; /* Espacio entre el logo y el texto */
+}
+
+
+.navbar:hover {
+    background-color: #f7f7f7; /* Fondo suave al pasar el mouse */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.8rem; /* Tamaño de fuente más grande */
+    color: #d4af37; /* Color dorado */
+    transition: color 0.3s, transform 0.3s; /* Transición de color y transformación */
+}
+
+.navbar-brand:hover {
+    color: #b49a2a; /* Color dorado más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+.nav-link {
+    font-size: 1.2rem; /* Tamaño de texto más grande */
+    color: #d4af37; /* Color dorado */
+    padding: 10px 30px; /* Espaciado de los enlaces (aumenta el valor horizontal) */
+    border-radius: 8px; /* Bordes redondeados */
+    margin: 0 10px; /* Margen horizontal entre los enlaces */
+    transition: background-color 0.4s, color 0.4s, transform 0.4s; /* Transición suave */
+}
+
+.nav-link:hover {
+    background-color: #d4af37; /* Fondo dorado al pasar el mouse */
+    color: #ffffff; /* Texto blanco al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+}
+
+.navbar-toggler {   
+    border-color: #d4af37; /* Color del borde del botón */
+}
+
+.navbar-toggler-icon {
+    background-color: #d4af37; /* Color del ícono del botón */
+}

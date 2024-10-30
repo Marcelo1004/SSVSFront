@@ -1,0 +1,80 @@
+/* Estilo general para el contenedor */
+.container {
+    background-color: #ffffff; /* Color de fondo blanco */
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 30px; /* Espaciado interno */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    max-width: 600px; /* Ancho máximo */
+    margin: auto; /* Centrar el contenedor */
+    position: relative; /* Para el pseudo-elemento */
+}
+
+/* Pseudo-elemento para decoración */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 215, 0, 0.1); /* Fondo dorado sutil */
+    border-radius: 12px; /* Bordes redondeados */
+    z-index: -1; /* Colocar detrás del contenido */
+}
+
+/* Estilo para el encabezado */
+h2 {
+    color: #b8860b; /* Color dorado para el texto */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centrar el texto */
+    margin-bottom: 20px; /* Espaciado inferior */
+    font-size: 1.8rem; /* Tamaño de fuente */
+}
+
+/* Estilo para los campos del formulario */
+.form-control {
+    border: 1px solid #b8860b; /* Borde dorado */
+    border-radius: 6px; /* Bordes redondeados */
+    padding: 12px; /* Espaciado interno */
+    background-color: #ffffff; /* Color de fondo blanco */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transición para el borde y sombra */
+}
+
+/* Estilo para los campos del formulario al enfocarse */
+.form-control:focus {
+    border-color: #ffd700; /* Color dorado más brillante al enfocar */
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5); /* Sombra dorada al enfocar */
+}
+
+/* Estilo para los botones */
+.btn {
+    border-radius: 6px; /* Bordes redondeados */
+    padding: 12px 20px; /* Espaciado interno */
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s; /* Transiciones para varios efectos */
+}
+
+/* Estilo para el botón de cancelar */
+.btn-light {
+    background-color: #f8f9fa; /* Color de fondo claro */
+    color: #343a40; /* Color del texto */
+    border: 1px solid #b8860b; /* Borde dorado */
+}
+
+/* Estilo para el botón de crear usuario */
+.btn-primary {
+    background-color: #b8860b; /* Color dorado */
+    border: none; /* Sin borde */
+    color: white; /* Color del texto */
+}
+
+/* Estilo para los botones al pasar el mouse */
+.btn:hover {
+    opacity: 0.9; /* Ligera opacidad al pasar el mouse */
+    transform: translateY(-4px); /* Levantar el botón al pasar el mouse */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+}
+
+/* Espaciado entre los botones */
+.text-end {
+    margin-top: 20px; /* Espaciado superior */
+}

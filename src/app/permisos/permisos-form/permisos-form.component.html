@@ -1,0 +1,25 @@
+<div class="container">
+    <h2 class="mb-5"> Nuevo Permiso</h2>
+    <div class="row row-cols-3 justify-content-center">
+        <form [formGroup]="form" (ngSubmit)="create()">
+            <div class="mb-3">
+                <label for="name">Nombre</label>
+                <input id = "name" type="text" placeholder="Nombre" class="form-control"
+                formControlName="name">
+        
+            </div>
+        
+        
+            <div class="text-end d-flex justify-content-between">
+                <button class="btn btn-light" routerLink="">
+                    Cancelar
+                </button>
+                <button class="btn btn-primary ms-2" type="submit">
+                    Crear Permiso
+                </button>
+            </div>
+        
+        </form>
+    </div>
+
+</div>

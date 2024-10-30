@@ -1,0 +1,52 @@
+<div class="container py-5">
+    <h2 class="mb-5">Medicos</h2>
+    
+    <div class="text-end">
+        <button class="btn btn-primary" routerLink="/newMedico">
+            Nuevo Medico
+        </button>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>APELLIDO</th>
+            <th>EMAIL</th>
+            <th>TELEFONO</th>
+            <th>ESPECIALIDAD</th>
+            <th>FECHA DE INICIO</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+            @for(medico of medicos;track medico.id )
+            {
+                <tr>
+                    <td>{{medico.id}}</td>
+                    <td>{{medico.name}}</td>
+                    <td>{{medico.lastname}}</td>
+                    <td>{{medico.email}}</td>
+                    <td>{{medico.phone}}</td>
+                    <td>{{medico.speciality}}</td>
+                    <td>{{medico.startedAt | date: 'dd/MM/yyyy hh:mm a'}}</td>
+                    <td>
+                        <div class="btn-group">
+                        <button class="btn btn-primary" [routerLink]="[medico.id,'editMedico']">
+                            Editar
+                        </button>
+                        <button class="btn btn-danger">
+                            Eliminar
+                        </button>
+                   </div>
+                    </td>
+                   
+                </tr>
+            }
+        </tbody>
+        
+    </table>
+    </div>
+    
+    

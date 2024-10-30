@@ -1,0 +1,49 @@
+<div class="container py-5">
+    <h2 class="mb-5">Asegurados</h2>
+    
+    <div class="text-end">
+        <button class="btn btn-primary" routerLink="/newAsegurado">
+            Nuevo Asegurado
+        </button>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>APELLIDO</th>
+            <th>EMAIL</th>
+            <th>TELEFONO</th>
+            <th>FECHA DE CREACION</th>
+        </tr>
+        </thead>
+        <tbody>
+            @for(asegurado of asegurados;track asegurado.id )
+            {
+                <tr>
+                    <td>{{asegurado.id}}</td>
+                    <td>{{asegurado.name}}</td>
+                    <td>{{asegurado.lastname}}</td>
+                    <td>{{asegurado.email}}</td>
+                    <td>{{asegurado.phone}}</td>
+                    <td>{{asegurado.createdAt | date: 'dd/MM/yyyy hh:mm a'}}</td>
+                    <td>
+                        <div class="btn-group">
+                        <button class="btn btn-primary">
+                            Editar
+                        </button>
+                        <button class="btn btn-danger">
+                            Eliminar
+                        </button>
+                   </div>
+                    </td>
+                   
+                </tr>
+            }
+        </tbody>
+        
+    </table>
+    </div>
+    
+    

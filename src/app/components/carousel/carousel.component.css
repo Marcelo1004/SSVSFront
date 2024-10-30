@@ -1,0 +1,47 @@
+.carousel-bordered {
+    border: 5px solid #d4af37; /* Un dorado más suave */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Para evitar que las esquinas sobresalgan */
+    position: relative; /* Para el posicionamiento de los elementos internos */
+}
+
+/* Estilo para los indicadores del carrusel */
+.carousel-indicators button {
+    background-color: #d4af37; /* Color dorado más suave para los indicadores */
+}
+
+/* Estilo para los captions */
+.carousel-caption {
+    background-color: rgba(211, 211, 211, 0.8); /* Fondo gris claro semitransparente */
+    border-radius: 5px; /* Bordes redondeados para el caption */
+    padding: 20px; /* Aumentar el espaciado interno */
+    color: #333; /* Color del texto más oscuro para mejorar la legibilidad */
+    margin-bottom: 20px; /* Espacio adicional en la parte inferior */
+}
+
+/* Aumentar el tamaño de los títulos y descripciones */
+.carousel-caption h5 {
+    font-size: 1.5rem; /* Aumentar tamaño de fuente para el título */
+    margin-bottom: 10px; /* Espacio inferior entre el título y la descripción */
+}
+
+.carousel-caption p {
+    font-size: 1.2rem; /* Aumentar tamaño de fuente para la descripción */
+    margin: 0; /* Eliminar márgenes para mejor alineación */
+    line-height: 1.4; /* Mejorar la altura de línea para mejor legibilidad */
+}
+
+/* Efecto de sombra para el texto en los captions */
+.carousel-caption h5,
+.carousel-caption p {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra sutil para mejorar la legibilidad */
+}
+
+/* Efecto de sombra para el carrusel */
+.carousel-inner img {
+    transition: transform 0.5s ease; /* Transición suave */
+}
+
+.carousel-item.active img {
+    transform: scale(1.05); /* Aumentar ligeramente la imagen activa */
+}

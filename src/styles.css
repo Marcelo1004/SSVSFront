@@ -1,0 +1,16 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .carousel-caption h5, .carousel-caption p {
+    color: white; /* Cambia el color del texto a blanco para mejorar la visibilidad */
+  }
+  
+  .carousel-item img {
+    object-fit: cover; /* Ajusta la imagen para que cubra bien el espacio */
+    height: 500px; /* Puedes ajustar la altura del carrusel */
+  }

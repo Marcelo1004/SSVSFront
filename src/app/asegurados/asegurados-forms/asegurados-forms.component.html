@@ -1,0 +1,38 @@
+<div class="container">
+    <h2 class="mb-5"> Nuevo Asegurado</h2>
+    <div class="row row-cols-3 justify-content-center">
+        <form [formGroup]="form" (ngSubmit)="create()">
+            <div class="mb-3">
+                <label for="name">Nombre</label>
+                <input id = "name" type="text" placeholder="Nombre" class="form-control"
+                formControlName="name">
+        
+            </div>
+        
+            <div class="mb-3">
+                <label for="email">Email</label>
+                <input id = "email" type="email" placeholder="Email" class="form-control"
+                formControlName="mail">
+        
+            </div>
+
+            <div class="mb-3">
+                <label for="phone">Telefono</label>
+                <input id = "phone" type="email" placeholder="Telefono" class="form-control"
+                formControlName="phone">
+        
+            </div>
+        
+            <div class="text-end d-flex justify-content-between">
+                <button class="btn btn-light" routerLink="">
+                    Cancelar
+                </button>
+                <button class="btn btn-primary ms-2" type="submit">
+                    Crear Usuario
+                </button>
+            </div>
+        
+        </form>
+    </div>
+
+</div>
