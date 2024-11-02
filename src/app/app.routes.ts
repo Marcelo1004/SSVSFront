@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
 
     {
-        path: '',
+        path: 'medicos',
         loadComponent: () => import('./medicos/medicos-list/medicos-list.component')
     },
     {
@@ -29,11 +29,16 @@ export const routes: Routes = [
         loadComponent: () => import('./asegurados/asegurados-list/asegurados-list.component')
     },
     {
-        path: 'usuarios',
+        path: '',
         loadComponent: () => import('./usuarios/usuarios-list/usuarios-list.component')
     },
     {
         path: 'newUsuario',
+        loadComponent: () => import('./usuarios/usuarios-form/usuarios-form.component')
+    }
+    ,
+    {
+        path: ':id/editUser',
         loadComponent: () => import('./usuarios/usuarios-form/usuarios-form.component')
     }
     ,

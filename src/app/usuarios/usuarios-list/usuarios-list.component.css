@@ -1,27 +1,42 @@
 /* Estilo general para el contenedor */
+
 .container {
-    background-color: #ffffff; /* Color de fondo blanco */
+
+    background-color: rgba(255, 255, 255, 0.9); /* Color de fondo blanco con opacidad */
+
     border-radius: 8px; /* Bordes redondeados */
+
     padding: 20px; /* Espaciado interno */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+
+    box-shadow: 0 4px 20px rgba(141, 135, 135, 0.945); /* Sombra más pronunciada */
+
     transition: transform 0.3s; /* Transición para el contenedor */
+
+    max-width: 1200px; /* Ancho máximo del contenedor */
+
+    margin: 0 auto; /* Centrar el contenedor */
+
 }
 
+
 /* Efecto hover para el contenedor */
+
 .container:hover {
+
     transform: scale(1.02); /* Efecto de aumento al pasar el mouse */
+
 }
 
 /* Estilo para el encabezado */
 h2 {
-    color: #b8860b; /* Color dorado para el texto */
+    color: #00c3ff; /* Color para el texto */
     font-weight: bold; /* Negrita */
     transition: color 0.3s; /* Transición para el color */
 }
 
 /* Efecto hover para el encabezado */
 h2:hover {
-    color: #ffd700; /* Color dorado más brillante al pasar el mouse */
+    color: #9b28dd9f; /* Color más brillante al pasar el mouse */
 }
 
 /* Estilo para la tabla */
@@ -32,50 +47,31 @@ h2:hover {
     background-color: #ffffff; /* Color de fondo blanco */
     border-radius: 8px; /* Bordes redondeados */
     overflow: hidden; /* Para que los bordes redondeados se apliquen */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    box-shadow: 0 4px 20px rgba(59, 195, 236, 0.5); /* Sombra más pronunciada */
 }
 
 /* Estilo para las celdas de la tabla */
 .table th, .table td {
     padding: 12px; /* Espaciado interno */
     text-align: left; /* Alinear texto a la izquierda */
-    border-bottom: 1px solid #b8860b; /* Línea divisoria dorada entre filas */
+    border-bottom: 1px solid rgb(59, 195, 236); /* Línea divisoria entre filas */
     transition: background-color 0.3s; /* Transición para el fondo */
 }
 
 /* Estilo para el encabezado de la tabla */
 .table th {
-    background-color: #b8860b; /* Color de fondo dorado para el encabezado */
+    background-color: rgb(59, 195, 236); /* Color de fondo para el encabezado */
     color: white; /* Color del texto del encabezado */
 }
 
-/* Estilo para las filas al pasar el mouse */
+/* Estilo para las filas al pasar el mouse */ 
 .table tr:hover {
-    background-color: rgba(255, 215, 0, 0.2); /* Color de fondo dorado claro al pasar el mouse */
-    transform: scale(1.01); /* Efecto de aumento al pasar el mouse */
-}
-
-/* Estilo para el cuadro de la contraseña */
-input[type="password"] {
-    border: 1px solid #ced4da; /* Borde gris claro */
-    border-radius: 4px; /* Bordes redondeados */
-    padding: 8px; /* Espaciado interno */
-    width: 100%; /* Ancho completo */
-    box-sizing: border-box; /* Incluir padding en el ancho total */
-    background-color: #f8f9fa; /* Color de fondo claro */
-    transition: border-color 0.3s; /* Transición para el borde */
-}
-
-/* Efecto focus para el cuadro de la contraseña */
-input[type="password"]:focus {
-    border-color: #b8860b; /* Borde dorado al enfocar */
-    outline: none; /* Sin contorno */
+    background-color: rgba(37, 37, 37, 0.1); /* Color de fondo al pasar el mouse */
 }
 
 /* Estilo para los botones */
 .btn {
     margin: 0 5px; /* Espaciado entre botones */
-    background-color: #b8860b; /* Color dorado para los botones */
     color: white; /* Color del texto de los botones */
     border: none; /* Sin borde */
     border-radius: 6px; /* Bordes redondeados */
@@ -85,7 +81,7 @@ input[type="password"]:focus {
 
 /* Efecto hover para los botones */
 .btn:hover {
-    background-color: #ffd700; /* Color dorado más brillante al pasar el mouse */
+    background-color: #9b28dd9f; /* Color más brillante al pasar el mouse */
     transform: translateY(-2px); /* Levantar el botón al pasar el mouse */
 }
 

@@ -1,40 +1,76 @@
 <div class="container">
-    <h2 class="mb-5"> Nuevo Usuario</h2>
+    <h2 class="mb-5"> 
+        @if(usuario){
+            Editar
+        }
+        @else {
+            Nuevo 
+        }
+         Usuario
+    </h2>
     <div class="row row-cols-3 justify-content-center">
-        <form [formGroup]="form" (ngSubmit)="create()">
-            <div class="mb-3">
-                <label for="name">Nombre</label>
-                <input id = "name" type="text" placeholder="Nombre" class="form-control"
-                formControlName="name">
-        
-            </div>
-        
-            <div class="mb-3">
-                <label for="email">Email</label>
-                <input id = "email" type="email" placeholder="Email" class="form-control"
-                formControlName="email">
-        
-            </div>
-
-            <div class="mb-3">
-                <label for="password">Contraseña</label>
-                <input id = "password" type="text" placeholder="Contraseña" class="form-control"
-                formControlName="mail">
-        
-            </div>
-
+        @if(form)
+        {
+            <form [formGroup]="form" (ngSubmit)="save()">
             
         
-            <div class="text-end d-flex justify-content-between">
-                <button class="btn btn-light" routerLink="">
-                    Cancelar
-                </button>
-                <button class="btn btn-primary ms-2" type="submit">
-                    Crear Usuario
-                </button>
-            </div>
-        
-        </form>
+                <div class="mb-3">
+                    <label for="correo">Email</label>
+                    <input id = "correo" type="email" placeholder="Email" class="form-control"
+                    formControlName="correo">
+            
+                </div>
+    
+                <div class="mb-3">
+                    <label for="password">Contraseña</label>
+                    <input id = "password" type="text" placeholder="Contraseña" class="form-control"
+                    formControlName="password">
+            
+                </div>
+    
+                <div class="mb-3">
+                    <label for="nombre">Nombre</label>
+                    <input id = "nombre" type="text" placeholder="Nombre" class="form-control"
+                    formControlName="nombre">
+            
+                </div>
+    
+                <div class="mb-3">
+                    <label for="apellido">Apellido</label>
+                    <input id = "apellido" type="text" placeholder="Apellido" class="form-control"
+                    formControlName="apellido">
+            
+                </div>
+    
+                <div class="mb-3">
+                    <label for="sexo">Sexo</label>
+                    <input id="sexo" type="text" maxlength="1" placeholder="Sexo" class="form-control" formControlName="sexo">
+                </div>
+    
+                
+    
+                <div class="mb-3">
+                    <label for="estado">Estado</label>
+                    <input id="estado" type="text" maxlength="1" placeholder="Estado" class="form-control" formControlName="estado">
+                </div>
+            
+                <div class="text-end d-flex justify-content-between">
+                    <button class="btn btn-light" routerLink="/">
+                        Cancelar
+                    </button>
+                    <button class="btn btn-primary ms-2" >
+                        @if(usuario){
+                            Actualizar
+                        }
+                        @else {
+                            Crear 
+                        }
+                         Usuario
+                    </button>
+                </div>
+            
+            </form>
+        }
     </div>
 
 </div>
