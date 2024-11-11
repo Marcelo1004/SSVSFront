@@ -1,80 +1,94 @@
 /* Estilo general para el contenedor */
+
 .container {
-    background-color: #ffffff; /* Color de fondo blanco */
-    border-radius: 12px; /* Bordes redondeados */
-    padding: 30px; /* Espaciado interno */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
-    max-width: 600px; /* Ancho máximo */
-    margin: auto; /* Centrar el contenedor */
-    position: relative; /* Para el pseudo-elemento */
+
+    background-color: rgba(255, 255, 255, 0.9); /* Color de fondo blanco con opacidad */
+
+    border-radius: 8px; /* Bordes redondeados */
+
+    padding: 20px; /* Espaciado interno */
+
+    overflow: hidden; /* Para que los bordes redondeados se apliquen */
+    box-shadow: 0 10px 60px rgba(59, 195, 236, 0.5); /* Sombra más pronunciada */
+
+    transition: transform 0.3s; /* Transición para el contenedor */
+
+    max-width: 1200px; /* Ancho máximo del contenedor */
+
+    margin: 0 auto; /* Centrar el contenedor */
+
 }
 
-/* Pseudo-elemento para decoración */
-.container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 215, 0, 0.1); /* Fondo dorado sutil */
-    border-radius: 12px; /* Bordes redondeados */
-    z-index: -1; /* Colocar detrás del contenido */
+
+/* Efecto hover para el contenedor */
+
+.container:hover {
+
+    transform: scale(1.02); /* Efecto de aumento al pasar el mouse */
+
 }
 
 /* Estilo para el encabezado */
 h2 {
-    color: #b8860b; /* Color dorado para el texto */
+    color: #00c3ff; /* Color para el texto */
     font-weight: bold; /* Negrita */
-    text-align: center; /* Centrar el texto */
-    margin-bottom: 20px; /* Espaciado inferior */
-    font-size: 1.8rem; /* Tamaño de fuente */
+    transition: color 0.3s; /* Transición para el color */
 }
 
-/* Estilo para los campos del formulario */
-.form-control {
-    border: 1px solid #b8860b; /* Borde dorado */
-    border-radius: 6px; /* Bordes redondeados */
-    padding: 12px; /* Espaciado interno */
+/* Efecto hover para el encabezado */
+h2:hover {
+    color: #9b28dd9f; /* Color más brillante al pasar el mouse */
+}
+
+/* Estilo para la tabla */
+.table {
+    width: 100%; /* Ancho completo */
+    margin-top: 20px; /* Espaciado superior */
+    border-collapse: collapse; /* Colapsar bordes */
     background-color: #ffffff; /* Color de fondo blanco */
-    transition: border-color 0.3s, box-shadow 0.3s; /* Transición para el borde y sombra */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Para que los bordes redondeados se apliquen */
+    box-shadow: 0 10px 60px rgba(59, 195, 236, 0.5); /* Sombra más pronunciada */
 }
 
-/* Estilo para los campos del formulario al enfocarse */
-.form-control:focus {
-    border-color: #ffd700; /* Color dorado más brillante al enfocar */
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5); /* Sombra dorada al enfocar */
+/* Estilo para las celdas de la tabla */
+.table th, .table td {
+    padding: 12px; /* Espaciado interno */
+    text-align: left; /* Alinear texto a la izquierda */
+    border-bottom: 1px solid rgb(59, 195, 236); /* Línea divisoria entre filas */
+    transition: background-color 0.3s; /* Transición para el fondo */
+}
+
+/* Estilo para el encabezado de la tabla */
+.table th {
+    background-color: rgb(59, 195, 236); /* Color de fondo para el encabezado */
+    color: white; /* Color del texto del encabezado */
+}
+
+/* Estilo para las filas al pasar el mouse */ 
+.table tr:hover {
+    background-color: rgba(37, 37, 37, 0.1); /* Color de fondo al pasar el mouse */
 }
 
 /* Estilo para los botones */
 .btn {
-    border-radius: 6px; /* Bordes redondeados */
-    padding: 12px 20px; /* Espaciado interno */
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s; /* Transiciones para varios efectos */
-}
-
-/* Estilo para el botón de cancelar */
-.btn-light {
-    background-color: #f8f9fa; /* Color de fondo claro */
-    color: #343a40; /* Color del texto */
-    border: 1px solid #b8860b; /* Borde dorado */
-}
-
-/* Estilo para el botón de crear usuario */
-.btn-primary {
-    background-color: #b8860b; /* Color dorado */
+    margin: 0 5px; /* Espaciado entre botones */
+    color: white; /* Color del texto de los botones */
     border: none; /* Sin borde */
-    color: white; /* Color del texto */
+    border-radius: 6px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
 }
 
-/* Estilo para los botones al pasar el mouse */
+/* Efecto hover para los botones */
 .btn:hover {
-    opacity: 0.9; /* Ligera opacidad al pasar el mouse */
-    transform: translateY(-4px); /* Levantar el botón al pasar el mouse */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+    background-color: #9b28dd9f; /* Color más brillante al pasar el mouse */
+    transform: translateY(-2px); /* Levantar el botón al pasar el mouse */
 }
 
-/* Espaciado entre los botones */
-.text-end {
+/* Estilo para el grupo de botones */
+.btn-group {
+    display: flex; /* Flex para alinear botones */
+    justify-content: flex-start; /* Alinear a la izquierda */
     margin-top: 20px; /* Espaciado superior */
 }

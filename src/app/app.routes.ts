@@ -25,11 +25,11 @@ export const routes: Routes = [
     }
     ,
     {
-        path: ':id/editAsegurado',
-        loadComponent: () => import('./asegurados/asegurados-list/asegurados-list.component')
+        path: ':id/editAsegurados',
+        loadComponent: () => import('./asegurados/asegurados-forms/asegurados-forms.component')
     },
     {
-        path: '',
+        path: 'usuarios',
         loadComponent: () => import('./usuarios/usuarios-list/usuarios-list.component')
     },
     {
@@ -52,11 +52,90 @@ export const routes: Routes = [
     }
     ,
     {
+        path: ':id/editRol',
+        loadComponent: () => import('./roles/roles-form/roles-form.component')
+    }
+    
+    ,
+    {
         path: 'permisos',
         loadComponent: () => import('./permisos/permisos-list/permisos-list.component')
-    },
+    }
+    ,
     {
         path: 'newPermiso',
         loadComponent: () => import('./permisos/permisos-form/permisos-form.component')
     }
+    ,
+    {
+        path: ':id/editPermiso',
+        loadComponent: () => import('./permisos/permisos-form/permisos-form.component')
+    }
+    ,
+    {
+        path: 'ausencia',
+        loadComponent: () => import('./ausencia/ausencia-list/ausencia-list.component')
+    }
+    ,
+    {
+        path: 'newAusencia',
+        loadComponent: () => import('./ausencia/ausencia-form/ausencia-form.component')
+    }
+    ,
+    {
+        path: ':id/editAusencia',
+        loadComponent: () => import('./ausencia/ausencia-form/ausencia-form.component')
+    }
+    ,
+    {
+        path: 'especialidad',
+        loadComponent: () => import('./especialidad/especialidad-list/especialidad-list.component')
+    }
+    ,
+    {
+        path: 'newEsp',
+        loadComponent: () => import('./especialidad/especialidad-form/especialidad-form.component')
+    }
+    ,
+    {
+        path: ':id/editEsp',
+        loadComponent: () => import('./especialidad/especialidad-form/especialidad-form.component')
+    }
+    ,
+    {
+        path: 'ficha',
+        loadComponent: () => import('./ficha/ficha-list/ficha-list.component')
+    }
+    ,
+    {
+        path: 'newFicha',
+        loadComponent: () => import('./ficha/ficha-form/ficha-form.component')
+    }
+    ,
+    {
+        path: ':id/editFicha',
+        loadComponent: () => import('./ficha/ficha-form/ficha-form.component')
+    }
+    ,
+    {
+        path: 'horario',
+        loadComponent: () => import('./horario/horario-list/horario-list.component')
+    }
+    ,
+    {
+        path: 'newHora',
+        loadComponent: () => import('./horario/horario-form/horario-form.component')
+    }
+    ,
+    {
+        path: ':id/editHora',
+        loadComponent: () => import('./horario/horario-form/horario-form.component')
+    }
+    ,
+    {
+        path: 'consulta',
+        loadComponent: () => import('./consulta/consulta-list/consulta-list.component')
+    }
+    
+    
 ];

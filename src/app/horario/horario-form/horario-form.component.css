@@ -1,0 +1,136 @@
+/* Estilo general para el contenedor */
+.container {
+    background-color: rgba(255, 255, 255, 0.95); /* Color de fondo blanco con opacidad */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 30px; /* Espaciado interno */
+    max-width: 650px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Centrar el contenedor */
+    transition: transform 0.3s ease-in-out; /* Transición suave */
+    overflow: hidden; /* Para que los bordes redondeados se apliquen */
+    box-shadow: 0 10px 60px rgba(59, 195, 236, 0.5); /* Sombra más pronunciada */
+}
+
+/* Efecto hover para el contenedor */
+.container:hover {
+    transform: scale(1.02); /* Efecto de aumento al pasar el mouse */
+}
+
+/* Estilo para el encabezado */
+h2 {
+    color: #00c3ff; /* Color para el texto */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centrar el texto */
+    margin-bottom: 30px; /* Margen inferior */
+    animation: fadeIn 0.5s ease-out; /* Animación de aparición */
+    transition: color 0.3s; /* Transición para el color */
+}
+
+/* Efecto hover para el encabezado */
+h2:hover {
+    color: #9b28dd9f; /* Color más brillante al pasar el mouse */
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilo para el formulario */
+form {
+    display: flex; /* Flexbox para el formulario */
+    flex-direction: column; /* Colocar los elementos en columna */
+    gap: 15px; /* Espaciado entre los elementos */
+}
+
+/* Estilo para las etiquetas */
+label {
+    font-weight: bold; /* Negrita */
+    margin-bottom: 5px; /* Margen inferior */
+    display: block;
+}
+
+/* Estilo para los inputs */
+.form-control {
+    border: 2px solid #ced4da; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espaciado inferior */
+    transition: border-color 0.3s, background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+}
+
+/* Efecto focus para los inputs */
+.form-control:focus {
+    border-color: #00c3ff; /* Cambiar color del borde al hacer focus */
+    background-color: rgba(53, 200, 219, 0.5); /* Fondo azul claro al hacer focus */
+    box-shadow: 0 0 5px rgba(53, 200, 219, 0.5); /* Sombra suave al hacer focus */
+    transform: scale(1.02); /* Aumentar el tamaño al hacer focus */
+}
+
+/* Estilo para los botones */
+.btn {
+    margin: 0 5px; /* Espaciado entre botones */
+    color: white; /* Color del texto de los botones */
+    border: none; /* Sin borde */
+    border-radius: 6px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    transition: background-color 0.3s, transform 0.2s ease-in-out; /* Transiciones suaves */
+}
+
+/* Efecto hover para los botones */
+.btn:hover {
+    background-color: #9b28dd9f; /* Color más brillante al pasar el mouse */
+    transform: translateY(-2px); /* Levantar el botón al pasar el mouse */
+}
+
+/* Estilo para los contenedores de los checkboxes */
+.dias-semana {
+    display: flex; /* Usar flexbox para alinear los checkboxes */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    gap: 10px; /* Espacio entre los checkboxes */
+}
+
+/* Ocultar el checkbox original */
+.dias-semana input[type="checkbox"] {
+    display: none; /* Ocultar el checkbox original */
+}
+
+/* Estilo para el label del checkbox */
+.dias-semana label {
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el label */
+    padding: 10px 15px; /* Espaciado interno */
+    border: 2px solid #ced4da; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad */
+    transition: background-color 0.3s, border-color 0.3s ease-in-out; /* Transiciones suaves */
+    font-size: 14px; /* Ajustar el tamaño de la fuente */
+}
+
+/* Estilo para el label cuando el checkbox está seleccionado */
+.dias-semana input[type="checkbox"]:checked + label {
+    background-color: #00c3ff; /* Color de fondo cuando está seleccionado */
+    border-color: #00c3ff; /* Cambiar color del borde cuando está seleccionado */
+    color: white; /* Color del texto cuando está seleccionado */
+}
+
+/* Efecto hover para el label */
+.dias-semana label:hover {
+    background-color: rgba(53, 200, 219, 0.5); /* Fondo azul claro al pasar el mouse */
+}
+
+/* Estilo para el contenedor de botones */
+.text-end {
+    margin-top: 20px; /* Espaciado superior */
+    display: flex; /* Flexbox para alinear botones */
+    justify-content: space-between; /* Justificar el contenido */
+}
+
+/* Estilo para el botón de cancelar */
+.btn-light:hover {
+    background-color: #9b28dd9f; /* Color más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Levantar el botón al pasar el mouse */
+}

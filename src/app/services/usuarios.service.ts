@@ -17,11 +17,11 @@ export class UsuarioService{
     get(id:number){
         return this.http.get<Usuarios>(`http://localhost:8080/api/usuarios/${id}`)
     }
-    create(usuario:Usuarios){
-        return this.http.post<Usuarios>('http://localhost:8080/api/usuarios',usuario);
+    create(usuarios:Usuarios){
+        return this.http.post<Usuarios>('http://localhost:8080/api/usuarios',usuarios);
     }
-    update(id:number,usuario:Usuarios){
-        return this.http.put<Usuarios>(`http://localhost:8080/api/usuarios/${id}`,usuario);
+    update(id:number,usuarios:Usuarios){
+        return this.http.put<Usuarios>(`http://localhost:8080/api/usuarios/${id}`,usuarios);
     }
     delete(id:number){
         return this.http.delete<void>(`http://localhost:8080/api/usuarios/${id}`);

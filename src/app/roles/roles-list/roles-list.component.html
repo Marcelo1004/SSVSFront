@@ -12,6 +12,7 @@
             <tr>
             <th>ID</th>
             <th>NOMBRE</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -19,16 +20,16 @@
             {
                 <tr>
                     <td>{{rol.id}}</td>
-                    <td>{{rol.name}}</td>
-                    <td>
+                    <td>{{rol.nombre}}</td>
+                    <td class="text-end">
                         <div class="btn-group">
-                        <button class="btn btn-primary">
+                            <button class="btn btn-primary" [routerLink]="['/',rol.id,'editRol']">
                             Editar
                         </button>
-                        <button class="btn btn-danger">
+                        <button class="btn btn-danger" (click)="deleteRoles(rol)" >
                             Eliminar
                         </button>
-                   </div>
+                        </div>
                     </td>
                    
                 </tr>

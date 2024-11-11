@@ -12,6 +12,8 @@
             <tr>
             <th>ID</th>
             <th>NOMBRE</th>
+            <th>DESCRIPCION</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -19,16 +21,17 @@
             {
                 <tr>
                     <td>{{permiso.id}}</td>
-                    <td>{{permiso.name}}</td>
-                    <td>
+                    <td>{{permiso.nombre}}</td>
+                    <td>{{permiso.descripcion}}</td>
+                    <td class="text-end">
                         <div class="btn-group">
-                        <button class="btn btn-primary">
+                            <button class="btn btn-primary" [routerLink]="['/',permiso.id,'editPermiso']">
                             Editar
                         </button>
-                        <button class="btn btn-danger">
+                        <button class="btn btn-danger" (click)="deletePerm(permiso)" >
                             Eliminar
                         </button>
-                   </div>
+                        </div>
                     </td>
                    
                 </tr>

@@ -1,6 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { MedicoService } from '../../services/medicos.service';
+import { Medicos } from '../../model/medicos.interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-medicos-form',
@@ -11,20 +14,65 @@ import { RouterModule } from '@angular/router';
 })
 export default class MedicosFormComponent implements OnInit{
   private fb = inject(FormBuilder);
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
+  private medicoService = inject(MedicoService);
 
+  form?: FormGroup;
+  medicos?: Medicos;
   ngOnInit(): void {
-    
-  }
-  form = this.fb.group({
-    name: ['',[Validators.required]],
-    lastname: ['',[Validators.required]],
-    email: ['',[Validators.email]],
-    phone: ['',[Validators.maxLength(8)]],
-    speciality: ['',[Validators.required]],
-  });
+    const id = this.route.snapshot.paramMap.get('id');
 
-  create(){
-    const medicos =console.log(this.form.value)
+    if(id){
+      this.medicoService.get(parseInt(id))
+      .subscribe(medicos => {
+        this.medicos = medicos;
+        this.form = this.fb.group({
+          item: [medicos.item,[Validators.required]],
+      
+        });
+
+        
+      })
+    }
+    else
+    {
+      this.form = this.fb.group({
+        item: ['',[Validators.required]],   
+      });
+    }
   }
+
+
+  save(){
+    if(this.form?.invalid)
+    {
+      this.form.markAllAsTouched();
+      return ;
+    }
+    const medForm =this.form!.value;
+    let request: Observable<Medicos>;
+    if(this.medicos)
+    {
+       request = this.medicoService.update(this.medicos.id,medForm);
+    }
+    else
+    {
+       request = this.medicoService.create(medForm);
+    }
+
+    request
+      .subscribe({
+        next: () => {
+        
+          this.router.navigate(['medicos']);
+        }
+      })
+
+   
+  }
+  cancel() {
+    this.router.navigate(['permisos']);
+}
 
 }

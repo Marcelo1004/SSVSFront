@@ -8,7 +8,8 @@
 
     padding: 20px; /* Espaciado interno */
 
-    box-shadow: 0 4px 20px rgba(141, 135, 135, 0.945); /* Sombra más pronunciada */
+    overflow: hidden; /* Para que los bordes redondeados se apliquen */
+    box-shadow: 0 10px 60px rgba(59, 195, 236, 0.5); /* Sombra más pronunciada */
 
     transition: transform 0.3s; /* Transición para el contenedor */
 
@@ -47,7 +48,7 @@ h2:hover {
     background-color: #ffffff; /* Color de fondo blanco */
     border-radius: 8px; /* Bordes redondeados */
     overflow: hidden; /* Para que los bordes redondeados se apliquen */
-    box-shadow: 0 4px 20px rgba(59, 195, 236, 0.5); /* Sombra más pronunciada */
+    box-shadow: 0 10px 60px rgba(59, 195, 236, 0.5); /* Sombra más pronunciada */
 }
 
 /* Estilo para las celdas de la tabla */

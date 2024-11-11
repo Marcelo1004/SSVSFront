@@ -13,9 +13,9 @@
             <th>ID</th>
             <th>EMAIL</th>
             <th>CONTRASEÑA</th>
+            <th>CI</th>
             <th>NOMBRE</th>
             <th>APELLIDO</th>
-            <th>SEXO</th>
             <th>FECHA DE CREACION</th>
             <th>ESTADO</th>
             <th> </th>
@@ -30,20 +30,20 @@
                     <td>
                         <input type="password" [value]="usuario.password" readonly />
                     </td>
+                    <td>{{usuario.ci}}</td>
                     <td>{{usuario.nombre}}</td>
                     <td>{{usuario.apellido}}</td>
-                    <td>{{usuario.sexo}}</td>
                     <td>{{usuario.createdAt | date: 'dd/MM/yyyy hh:mm a'}}</td>
                     <td>{{usuario.estado}}</td>
                     <td class="text-end">
                         <div class="btn-group">
-                            <button class="btn btn-primary" [routerLink]="[usuario.id,'editUser']">
+                            <button class="btn btn-primary" [routerLink]="['/',usuario.id,'editUser']">
                             Editar
                         </button>
                         <button class="btn btn-danger" (click)="deleteUser(usuario)" >
                             Eliminar
                         </button>
-                   </div>
+                        </div>
                     </td>
                    
                 </tr>

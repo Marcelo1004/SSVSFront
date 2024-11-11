@@ -11,12 +11,9 @@
         <thead>
             <tr>
             <th>ID</th>
-            <th>NOMBRE</th>
-            <th>APELLIDO</th>
-            <th>EMAIL</th>
-            <th>TELEFONO</th>
-            <th>ESPECIALIDAD</th>
-            <th>FECHA DE INICIO</th>
+            <th>ITEM</th>
+            <th></th>
+
             
         </tr>
         </thead>
@@ -25,18 +22,13 @@
             {
                 <tr>
                     <td>{{medico.id}}</td>
-                    <td>{{medico.name}}</td>
-                    <td>{{medico.lastname}}</td>
-                    <td>{{medico.email}}</td>
-                    <td>{{medico.phone}}</td>
-                    <td>{{medico.speciality}}</td>
-                    <td>{{medico.startedAt | date: 'dd/MM/yyyy hh:mm a'}}</td>
+                    <td>{{medico.item}}</td>
                     <td>
                         <div class="btn-group">
-                        <button class="btn btn-primary" [routerLink]="[medico.id,'editMedico']">
+                        <button class="btn btn-primary" [routerLink]="['/',medico.id,'editMedico']">
                             Editar
                         </button>
-                        <button class="btn btn-danger">
+                        <button class="btn btn-danger" (click)="deleteMedico(medico)">
                             Eliminar
                         </button>
                    </div>

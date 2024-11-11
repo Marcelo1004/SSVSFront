@@ -1,0 +1,48 @@
+<div class="container py-5">
+    <h2 class="mb-5">Horario</h2>
+    
+    <div class="text-end">
+        <button class="btn btn-primary" routerLink="/newHora">
+            Nuevo Horario
+        </button>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>DIA</th>
+            <th>HORA DE INICIO</th>
+            <th>HORA FINAL</th>
+            <th>CANTIDAD DE CUPOS</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            @for(horario of horarios;track horario.id )
+            {
+                <tr>
+                    <td>{{horario.id}}</td>
+                    <td>{{translateDays(horario.diasSemana)}}</td>
+                    <td>{{horario.horaInicio}}</td>
+                    <td>{{horario.horaFinal}}</td>
+                    <td>{{horario.cantidadCupos}}</td>
+                    <td class="text-end">
+                        <div class="btn-group">
+                            <button class="btn btn-primary" [routerLink]="['/',horario.id,'editHora']">
+                            Editar
+                        </button>
+                        <button class="btn btn-danger" (click)="deleteHora(horario)" >
+                            Eliminar
+                        </button>
+                        </div>
+                    </td>
+                   
+                </tr>
+            }
+        </tbody>
+        
+    </table>
+    </div>
+    
+    

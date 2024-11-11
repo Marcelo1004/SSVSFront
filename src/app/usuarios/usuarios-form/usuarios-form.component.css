@@ -1,80 +1,108 @@
 /* Estilo general para el contenedor */
 .container {
-    background-color: #ffffff; /* Color de fondo blanco */
-    border-radius: 12px; /* Bordes redondeados */
-    padding: 30px; /* Espaciado interno */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
-    max-width: 600px; /* Ancho máximo */
-    margin: auto; /* Centrar el contenedor */
-    position: relative; /* Para el pseudo-elemento */
+    background-color: rgba(255, 255, 255, 0.95); /* Color de fondo blanco con opacidad */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 30px; /* Espaciado interno */  
+    max-width: 650px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Centrar el contenedor */
+    transition: transform 0.3s; /* Transición para el contenedor */
+    overflow: hidden; /* Para que los bordes redondeados se apliquen */
+    box-shadow: 0 10px 60px rgba(59, 195, 236, 0.5); /* Sombra más pronunciada */
 }
 
-/* Pseudo-elemento para decoración */
-.container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 215, 0, 0.1); /* Fondo dorado sutil */
-    border-radius: 12px; /* Bordes redondeados */
-    z-index: -1; /* Colocar detrás del contenido */
+/* Efecto hover para el contenedor */
+.container:hover {
+    transform: scale(1.02); /* Efecto de aumento al pasar el mouse */
 }
 
 /* Estilo para el encabezado */
 h2 {
-    color: #b8860b; /* Color dorado para el texto */
+    color: #00c3ff; /* Color para el texto */
     font-weight: bold; /* Negrita */
     text-align: center; /* Centrar el texto */
-    margin-bottom: 20px; /* Espaciado inferior */
-    font-size: 1.8rem; /* Tamaño de fuente */
+    margin-bottom: 30px; /* Margen inferior */
+    animation: fadeIn 0.5s; /* Animación de aparición */
+    transition: color 0.3s; /* Transición para el color */
+}
+/* Efecto hover para el encabezado */
+h2:hover {
+    color: #9b28dd9f; /* Color más brillante al pasar el mouse */
+}
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-/* Estilo para los campos del formulario */
+/* Estilo para el formulario */
+form {
+    display: flex; /* Flexbox para el formulario */
+    flex-direction: column; /* Colocar los elementos en columna */
+}
+
+/* Estilo para las etiquetas */
+label {
+    font-weight: bold; /* Negrita */
+    margin-bottom: 5px; /* Margen inferior */
+}
+
+/* Estilo para los inputs */
 .form-control {
-    border: 1px solid #b8860b; /* Borde dorado */
-    border-radius: 6px; /* Bordes redondeados */
-    padding: 12px; /* Espaciado interno */
-    background-color: #ffffff; /* Color de fondo blanco */
-    transition: border-color 0.3s, box-shadow 0.3s; /* Transición para el borde y sombra */
+    border: 2px solid #ced4da; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espaciado inferior */
+    transition: border-color 0.3s, background-color 0.3s, transform 0.3s; /* Transiciones suaves */
 }
 
-/* Estilo para los campos del formulario al enfocarse */
+/* Efecto focus para los inputs */
 .form-control:focus {
-    border-color: #ffd700; /* Color dorado más brillante al enfocar */
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5); /* Sombra dorada al enfocar */
+    border-color: #00c3ff; /* Cambiar color del borde al hacer focus */
+    background-color: rgba(53, 200, 219, 0.5); /* Fondo azul claro al hacer focus */
+    box-shadow: 0 0 5px rgba(53, 200, 219, 0.5); /* Sombra suave al hacer focus */
+    transform: scale(1.02); /* Aumentar el tamaño al hacer focus */
 }
 
 /* Estilo para los botones */
 .btn {
-    border-radius: 6px; /* Bordes redondeados */
-    padding: 12px 20px; /* Espaciado interno */
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s; /* Transiciones para varios efectos */
-}
-
-/* Estilo para el botón de cancelar */
-.btn-light {
-    background-color: #f8f9fa; /* Color de fondo claro */
-    color: #343a40; /* Color del texto */
-    border: 1px solid #b8860b; /* Borde dorado */
-}
-
-/* Estilo para el botón de crear usuario */
-.btn-primary {
-    background-color: #b8860b; /* Color dorado */
+    margin: 0 5px; /* Espaciado entre botones */
+    color: white; /* Color del texto de los botones */
     border: none; /* Sin borde */
-    color: white; /* Color del texto */
+    border-radius: 6px; /* Bordes redondeados */
+    padding: 10px 15px; /* Espaciado interno */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
 }
 
-/* Estilo para los botones al pasar el mouse */
+/* Efecto hover para los botones */
 .btn:hover {
-    opacity: 0.9; /* Ligera opacidad al pasar el mouse */
-    transform: translateY(-4px); /* Levantar el botón al pasar el mouse */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+    background-color: #9b28dd9f; /* Color más brillante al pasar el mouse */
+    transform: translateY(-2px); /* Levantar el botón al pasar el mouse */
 }
 
-/* Espaciado entre los botones */
+
+
+
+/* Efecto hover para el botón de cancelar */
+.btn-light:hover {
+    background-color: #9b28dd9f; /* Color más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Levantar el botón al pasar el mouse */
+}
+
+
+
+/* Efecto hover para el botón de crear/actualizar */
+.btn-primary:hover {
+    background-color: #9b28dd9f; /* Color más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Levantar el botón al pasar el mouse */
+}
+
+/* Estilo para el contenedor de botones */
 .text-end {
     margin-top: 20px; /* Espaciado superior */
+    display: flex; /* Flexbox para alinear botones */
+    justify-content: space-between; /* Justificar el contenido */
 }

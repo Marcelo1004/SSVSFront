@@ -30,9 +30,9 @@ export default class UsuariosListComponent  implements OnInit{
      });
     }
 
-    deleteUser(usuario:Usuarios)
+    deleteUser(usuarios:Usuarios)
     {
-      this.usuarioService.delete(usuario.id)
+      this.usuarioService.delete(usuarios.id)
       .subscribe(() =>{
         this.loadAll();
       })

@@ -1,0 +1,80 @@
+<div class="container">
+  <h2 class="mb-5">{{ horario ? 'Editar' : 'Nuevo' }} Horario</h2>
+  <div class="row row-cols-3 justify-content-center">
+    <form [formGroup]="form" (ngSubmit)="save()">
+      <div class="container">
+        <label for="diasSemana">Días de la semana</label>
+        <div formArrayName="diasSemana">
+          <div *ngFor="let day of diasSemana; let i = index">
+            <label>
+              <input 
+                type="checkbox" 
+                [formControlName]="i"  
+                [checked]="form.get('diasSemana')?.value[i]" 
+              />
+              {{ day }}
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="cantidadCupos">Cantidad de Fichas</label>
+        <input
+          id="cantidadCupos"
+          type="number"
+          placeholder="Cantidad de Fichas"
+          class="form-control"
+          formControlName="cantidadCupos"
+        />
+        <p *ngIf="form.get('cantidadCupos')?.hasError('required') && form.get('cantidadCupos')?.touched" class="invalid-feedback d-block">
+          La cantidad de fichas es obligatoria
+        </p>
+        <p *ngIf="form.get('cantidadCupos')?.hasError('min') " class="invalid-feedback d-block">
+          Introduce 2 fichas como mínimo
+        </p>
+      </div>
+
+      <div class="mb-3">
+        <label for="horaInicio">Hora Inicial</label>
+        <input
+          id="horaInicio"
+          type="number"
+          placeholder="Hora Inicial"
+          class="form-control"
+          formControlName="horaInicio"
+        />
+        <p *ngIf="form.get('horaInicio')?.hasError('required') && form.get('horaInicio')?.touched" class="invalid-feedback d-block">
+          La hora inicial es obligatoria
+        </p>
+        <p *ngIf="form.get('horaInicio')?.hasError('min') || form.get('horaInicio')?.hasError('max')" class="invalid-feedback d-block">
+          Introduce una hora válida entre 7 y 22
+        </p>
+      </div>
+
+      <div class="mb-3">
+        <label for="horaFinal">Hora Final</label>
+        <input
+          id="horaFinal"
+          type="number"
+          placeholder="Hora Final"
+          class="form-control"
+          formControlName="horaFinal"
+        />
+        <p *ngIf="form.get('horaFinal')?.hasError('required') && form.get('horaFinal')?.touched" class="invalid-feedback d-block">
+          La hora final es obligatoria
+        </p>
+        <p *ngIf="form.get('horaFinal')?.hasError('min') || form.get('horaFinal')?.hasError('max')" class="invalid-feedback d-block">
+          Introduce una hora válida entre 8 y 23
+        </p>
+      </div>
+
+      <div class="text-end d-flex justify-content-between">
+        <button type="button" class="btn btn-danger" (click)="cancel()">Cancelar</button>
+        <button class="btn btn-primary ms-2" type="submit" [disabled]="form.invalid">
+          {{ horario ? 'Actualizar' : 'Crear' }} Horario
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

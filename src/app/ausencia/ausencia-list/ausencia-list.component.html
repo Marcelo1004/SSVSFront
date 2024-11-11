@@ -1,0 +1,46 @@
+<div class="container py-5">
+    <h2 class="mb-5">Reporte de Ausencia</h2>
+    
+    <div class="text-end">
+        <button class="btn btn-primary" routerLink="/newAusencia">
+            Nueva Ausencia
+        </button>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>DESCRIPCION</th>
+            <th>ESTADO</th>
+            <th>FECHA DE AUSENCIA</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            @for(ausencia of ausencias;track ausencia.id )
+            {
+                <tr>
+                    <td>{{ausencia.id}}</td>
+                    <td>{{ausencia.descrip}}</td>
+                    <td>{{ausencia.estado}}</td>
+                    <td>{{ ausencia.dia + '/' + ausencia.mes + '/' + ausencia.anio }}</td>
+                    <td class="text-end">
+                        <div class="btn-group">
+                            <button class="btn btn-primary" [routerLink]="['/',ausencia.id,'editAusencia']">
+                            Editar
+                        </button>
+                        <button class="btn btn-danger" (click)="deleteAusencia(ausencia)" >
+                            Eliminar
+                        </button>
+                        </div>
+                    </td>
+                   
+                </tr>
+            }
+        </tbody>
+        
+    </table>
+    </div>
+    
+    

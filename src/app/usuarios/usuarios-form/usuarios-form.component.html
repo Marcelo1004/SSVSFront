@@ -1,6 +1,6 @@
 <div class="container">
     <h2 class="mb-5"> 
-        @if(usuario){
+        @if(usuarios){
             Editar
         }
         @else {
@@ -15,9 +15,28 @@
             
         
                 <div class="mb-3">
+                    <label for="ci">CI</label>
+                    <input id="ci" type="text"  placeholder="CI" class="form-control" formControlName="ci">
+                    @if(form.get('ci')?.hasError('required') && form.get('ci')?.touched){
+                        <p class="invalid-feedback d-block">El CI es obligatorio</p>
+                    }
+                    @if(form.get('ci')?.hasError('pattern') && form.get('ci')?.touched) {
+
+                        <p class="invalid-feedback d-block">Introduce un CI válido de 7 cifras (solo números)</p>
+                    
+                    }
+                </div>
+
+                <div class="mb-3">
                     <label for="correo">Email</label>
                     <input id = "correo" type="email" placeholder="Email" class="form-control"
                     formControlName="correo">
+                    @if(form.get('correo')?.hasError('required') && form.get('correo')?.touched){
+                        <p class="invalid-feedback d-block">El correo es obligatorio</p>
+                    }
+                    @if(form.get('correo')?.hasError('email')){
+                        <p class="invalid-feedback d-block">Introduce un correo valido</p>
+                    }
             
                 </div>
     
@@ -25,6 +44,21 @@
                     <label for="password">Contraseña</label>
                     <input id = "password" type="text" placeholder="Contraseña" class="form-control"
                     formControlName="password">
+                    @if(form.get('password')?.hasError('required')&& form.get('password')?.touched){
+                        <p class="invalid-feedback d-block">La contraseña es obligatoria</p>
+                    }
+                    @if(form.get('password')?.hasError('minlength') && form.get('password')?.touched) {
+
+                        <p class="invalid-feedback d-block">La contraseña debe tener al menos 8 caracteres</p>
+                    
+                    }
+                    
+                    @if(form.get('password')?.hasError('maxlength') && form.get('password')?.touched) {
+                    
+                        <p class="invalid-feedback d-block">La contraseña no puede tener más de 16 caracteres</p>
+                    
+                    }
+                    
             
                 </div>
     
@@ -32,6 +66,9 @@
                     <label for="nombre">Nombre</label>
                     <input id = "nombre" type="text" placeholder="Nombre" class="form-control"
                     formControlName="nombre">
+                    @if(form.get('nombre')?.hasError('required')&& form.get('nombre')?.touched){
+                        <p class="invalid-feedback d-block">El nombre es obligatorio</p>
+                    }
             
                 </div>
     
@@ -39,27 +76,30 @@
                     <label for="apellido">Apellido</label>
                     <input id = "apellido" type="text" placeholder="Apellido" class="form-control"
                     formControlName="apellido">
+                    @if(form.get('apellido')?.hasError('required')&& form.get('apellido')?.touched){
+                        <p class="invalid-feedback d-block">El apellido es obligatorio</p>
+                    }
             
                 </div>
     
-                <div class="mb-3">
-                    <label for="sexo">Sexo</label>
-                    <input id="sexo" type="text" maxlength="1" placeholder="Sexo" class="form-control" formControlName="sexo">
-                </div>
+                
     
                 
     
                 <div class="mb-3">
                     <label for="estado">Estado</label>
                     <input id="estado" type="text" maxlength="1" placeholder="Estado" class="form-control" formControlName="estado">
+                    @if(form.get('estado')?.hasError('required')&& form.get('estado')?.touched){
+                        <p class="invalid-feedback d-block">El estado es obligatorio</p>
+                    }
                 </div>
             
                 <div class="text-end d-flex justify-content-between">
-                    <button class="btn btn-light" routerLink="/">
+                    <button type="button" class="btn btn-danger" (click)="cancel()">
                         Cancelar
                     </button>
                     <button class="btn btn-primary ms-2" >
-                        @if(usuario){
+                        @if(usuarios){
                             Actualizar
                         }
                         @else {

@@ -1,82 +1,82 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterModule,Router, ActivatedRoute } from '@angular/router';
+import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 import { UsuarioService } from '../../services/usuarios.service';
 import { Usuarios } from '../../model/usuarios.interface';
-
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-usuarios-form',
   standalone: true,
-  imports: [RouterModule,ReactiveFormsModule],
+  imports: [RouterModule, ReactiveFormsModule],
   templateUrl: './usuarios-form.component.html',
-  styleUrl: './usuarios-form.component.css'
+  styleUrls: ['./usuarios-form.component.css'] 
 })
-export default class UsuariosFormComponent implements OnInit{
+export default class UsuariosFormComponent implements OnInit {
 
   private fb = inject(FormBuilder);
   private router = inject(Router);
   private route = inject(ActivatedRoute);
   private usuarioService = inject(UsuarioService);
 
-  form?: FormGroup;
-  usuario?: Usuarios;
+  form!: FormGroup; // 
+  usuarios?: Usuarios;
+
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
 
-    if(id){
+    if (id) {
       this.usuarioService.get(parseInt(id))
-      .subscribe(usuario => {
-        this.usuario = usuario;
-        this.form = this.fb.group({
-          correo: [usuario.correo,[Validators.email]],
-          password: [usuario.password,[Validators.required]],
-          nombre: [usuario.nombre,[Validators.required]],
-          apellido: [usuario.apellido,[Validators.required]],
-          sexo: [usuario.sexo,[Validators.required]],
-          fechaNacimiento: [usuario.fechaNacimiento,[Validators.required]],
-          estado: [usuario.estado,[Validators.required]]
-      
+        .subscribe(usuarios => {
+          this.usuarios = usuarios;
+          this.form = this.fb.group({
+            ci: [usuarios.ci, [Validators.required,Validators.pattern('^[0-9]{7}$')]],
+            correo: [usuarios.correo, [Validators.email, Validators.required]],
+            password: [usuarios.password, [Validators.required,Validators.minLength(8), Validators.maxLength(16)]],      
+            nombre: [usuarios.nombre, [Validators.required]],
+            apellido: [usuarios.apellido, [Validators.required]],
+            estado: [usuarios.estado, [Validators.required]]
+          });
         });
-
-        
-      })
-    }
-    else
-    {
+    } else {
       this.form = this.fb.group({
-        correo: ['',[Validators.email]],
-        password: ['',[Validators.required]],
-        nombre: ['',[Validators.required]],
-        apellido: ['',[Validators.required]],
-        sexo: ['',[Validators.required]],
-        fechaNacimiento: ['',[Validators.required]],
-        estado: ['',[Validators.required]]
-    
+        ci: ['', [ Validators.required,Validators.pattern('^[0-9]{7}$')]],
+        correo: ['', [Validators.email, Validators.required]],
+        password: ['', [Validators.required,Validators.minLength(8), Validators.maxLength(8)]],
+        nombre: ['', [Validators.required]],
+        apellido: ['', [Validators.required]],
+        estado: ['', [Validators.required]]
       });
     }
   }
 
+  save() {
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      console.error('Formulario inválido');
+      return;
+    }
 
-  save(){
-    const usersForm =this.form!.value;
-
-    if(this.usuario)
+    const userForm =this.form!.value;
+    let request: Observable<Usuarios>;
+    if(this.usuarios)
     {
-      this.usuarioService.update(this.usuario.id,usersForm)
-      .subscribe(() =>{
-        this.router.navigate(['/']);
-      });
+       request = this.usuarioService.update(this.usuarios.id,userForm);
     }
     else
     {
-      this.usuarioService.create(usersForm)
-    .subscribe(() =>{
-      this.router.navigate(['/']);
-    });
+       request = this.usuarioService.create(userForm);
     }
 
-    
+    request
+      .subscribe({
+        next: () => {
+        
+          this.router.navigate(['usuarios']);
+        }
+      })
   }
-
+  cancel() {
+    this.router.navigate(['usuarios']);
+}
 }

@@ -1,0 +1,92 @@
+<div class="container">
+    <h2 class="mb-5"> 
+        @if(ausencia){
+            Editar
+        }
+        @else {
+            Nuevo 
+        }
+         Reporte de Ausencia
+    </h2>
+    <div class="row row-cols-3 justify-content-center">
+        @if(form)
+        {
+            <form [formGroup]="form" (ngSubmit)="save()">
+            
+    
+                <div class="mb-3">
+                    <label for="descrip">Descripcion</label>
+                    <input id = "descrip" type="text" placeholder="Descripcion" class="form-control"
+                    formControlName="descrip">
+                    @if(form.get('descrip')?.hasError('required')&& form.get('descrip')?.touched){
+                        <p class="invalid-feedback d-block">La Descripcion es obligatoria</p>
+                    }
+            
+                </div>
+
+                <div class="mb-3">
+                    <label for="estado">Estado</label>
+                    <input id="estado" type="text" maxlength="1" placeholder="Estado" class="form-control" formControlName="estado">
+                    @if(form.get('estado')?.hasError('required') && form.get('estado')?.touched){
+                        <p class="invalid-feedback d-block">El Estado es obligatorio</p>
+                    }
+                </div>
+    
+                <div class="mb-3">
+                    <div class="container">
+                        <label for="dia">Dia</label>
+                    <input id = "dia" type="number" placeholder="dia" class="form-control"
+                    formControlName="dia">
+                    @if(form.get('dia')?.hasError('required')&& form.get('dia')?.touched){
+                        <p class="invalid-feedback d-block">El Dia es obligatorio</p>
+                    }
+                    
+                    @if(form.get('dia')?.hasError('min') ||form.get('dia')?.hasError('max') ){
+                        <p class="invalid-feedback d-block">Introduce un día entre 1 y 31</p>
+                    }
+
+                    <label for="mes">Mes</label>
+                    <input id = "mes" type="number" placeholder="Mes" class="form-control"
+                    formControlName="mes">
+                    @if(form.get('mes')?.hasError('required')&& form.get('mes')?.touched){
+                        <p class="invalid-feedback d-block">El Mes es obligatorio</p>
+                    }
+                    
+                    @if(form.get('mes')?.hasError('min') ||form.get('mes')?.hasError('max') ){
+                        <p class="invalid-feedback d-block">Introduce un mes entre 1 y 12</p>
+                    }
+
+                    <label for="anio">Año</label>
+                    <input id = "anio" type="number" placeholder="Año" class="form-control"
+                    formControlName="anio">
+                    @if(form.get('anio')?.hasError('required')&& form.get('anio')?.touched){
+                        <p class="invalid-feedback d-block">El Año es obligatorio</p>
+                    }
+                    @if(form.get('anio')?.hasError('min') ||form.get('anio')?.hasError('max') ){
+                        <p class="invalid-feedback d-block">Introduce un año entre 2023 y 2025</p>
+                    }
+                    </div>
+            
+                </div>
+    
+            
+                <div class="text-end d-flex justify-content-between">
+                    <button class="btn btn-danger" routerLink="ausencia">
+                        Cancelar
+                    </button>
+                    <button class="btn btn-primary ms-2" >
+                        @if(ausencia){
+                            Actualizar
+                        }
+                        @else {
+                            Crear 
+                        }
+                        Reporte de Ausencia
+                    </button>
+                </div>
+            
+            </form>
+        }
+    </div>
+
+</div>

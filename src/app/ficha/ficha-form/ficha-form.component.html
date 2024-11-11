@@ -1,0 +1,46 @@
+<div class="container">
+    <h2 class="mb-5"> 
+        @if(ficha){
+            Editar
+        }
+        @else {
+            Nueva
+        }
+         Ficha
+    </h2>
+    <div class="row row-cols-3 justify-content-center">
+        @if(form)
+        {
+            <form [formGroup]="form" (ngSubmit)="save()">
+            
+
+                <div class="mb-3">
+                    <label for="estado">Estado</label>
+                    <input id="estado" type="text" maxlength="1" placeholder="Estado" class="form-control" formControlName="sexo">
+                    @if(form.get('estado')?.hasError('required') && form.get('estado')?.touched){
+                        <p class="invalid-feedback d-block">El estado es obligatorio</p>
+                    }
+                </div>
+    
+              
+            
+                <div class="text-end d-flex justify-content-between">
+                    <button class="btn btn-danger" routerLink="ficha">
+                        Cancelar
+                    </button>
+                    <button class="btn btn-primary ms-2" >
+                        @if(ficha){
+                            Actualizar
+                        }
+                        @else {
+                            Crear 
+                        }
+                         Asegurado
+                    </button>
+                </div>
+            
+            </form>
+        }
+    </div>
+
+</div>

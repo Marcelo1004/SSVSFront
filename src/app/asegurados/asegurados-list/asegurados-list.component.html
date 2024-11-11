@@ -11,11 +11,10 @@
         <thead>
             <tr>
             <th>ID</th>
-            <th>NOMBRE</th>
-            <th>APELLIDO</th>
-            <th>EMAIL</th>
-            <th>TELEFONO</th>
-            <th>FECHA DE CREACION</th>
+            <th>TIPO DE SANGRE</th>
+            <th>SEXO</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -23,20 +22,18 @@
             {
                 <tr>
                     <td>{{asegurado.id}}</td>
-                    <td>{{asegurado.name}}</td>
-                    <td>{{asegurado.lastname}}</td>
-                    <td>{{asegurado.email}}</td>
-                    <td>{{asegurado.phone}}</td>
-                    <td>{{asegurado.createdAt | date: 'dd/MM/yyyy hh:mm a'}}</td>
-                    <td>
+                    <td>{{asegurado.tipoSangre}}</td>
+                    <td>{{asegurado.sexo}}</td>
+                    <td>{{ asegurado.dia + '/' + asegurado.mes + '/' + asegurado.anio }}</td>
+                    <td class="text-end">
                         <div class="btn-group">
-                        <button class="btn btn-primary">
+                            <button class="btn btn-primary" [routerLink]="['/',asegurado.id,'editAsegurados']">
                             Editar
                         </button>
-                        <button class="btn btn-danger">
+                        <button class="btn btn-danger" (click)="deleteAsegurado(asegurado)" >
                             Eliminar
                         </button>
-                   </div>
+                        </div>
                     </td>
                    
                 </tr>

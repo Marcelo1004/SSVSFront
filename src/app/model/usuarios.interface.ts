@@ -1,11 +1,10 @@
 export interface Usuarios{
     id:number;
+    ci:string;
     correo: string;
     password: string;
     nombre: string;
     apellido:string;
-    sexo:CharacterData;
-    fechaNacimiento:Date;
     estado:CharacterData;
     createdAt:string;
     
