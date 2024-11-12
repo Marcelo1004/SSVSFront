@@ -3,6 +3,7 @@ export interface Consulta{
     fecha:string;
     motivo:String;
     diagnostico:String;
+    tratamiento:String;
     notas:String;
     
 }

@@ -1,0 +1,33 @@
+<div class="container py-5">
+    <h2 class="mb-5">Receta</h2>
+    
+    <div class="text-end mb-3">
+        <button class="btn btn-primary" routerLink="/newReceta">
+            Nueva Receta
+        </button>
+    </div>
+
+    <div class="row">
+        @for(receta of recetas; track receta.id)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Receta ID: {{ receta.id }}</h5>
+                        <p class="card-text"><strong>Indicaciones:</strong> {{ receta.indicaciones }}</p>
+                        <p class="card-text"><strong>Fecha de Inicio:</strong> {{ receta.fechaInicio }}</p>
+                        <p class="card-text"><strong>Fecha Final:</strong> {{ receta.fechaFinal }}</p>
+                        <div class="btn-group" role="group">
+                            <button class="btn btn-primary" [routerLink]="['/', receta.id, 'editReceta']">
+                                Editar
+                            </button>
+                            <button class="btn btn-danger" (click)="deleteCons(receta)">
+                                Eliminar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

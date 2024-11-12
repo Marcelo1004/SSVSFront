@@ -3,6 +3,34 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
 
     {
+        path: '',
+        loadComponent: () => import('./shared/components/layout/layout.component'),
+        children:[
+            {
+                path: 'dashboard',
+                loadComponent: () => import('./business/dashboard/dashboard.component'),
+            }
+            ,
+            {
+                path: 'dashUser',
+                loadComponent: () => import('./business/users-dash/users-dash.component'),
+            }
+            ,
+            {
+                path: 'dashAtencion',
+                loadComponent: () => import('./business/atencion-dash/atencion-dash.component'),
+            }
+            ,
+            {
+                path: '',
+                redirectTo: 'dashboard',
+                pathMatch: 'full'
+            }
+            ,
+            
+        ]
+    },
+    {
         path: 'medicos',
         loadComponent: () => import('./medicos/medicos-list/medicos-list.component')
     },
@@ -136,6 +164,38 @@ export const routes: Routes = [
         path: 'consulta',
         loadComponent: () => import('./consulta/consulta-list/consulta-list.component')
     }
+    ,
+    {
+        path: 'newCons',
+        loadComponent: () => import('./consulta/consulta-form/consulta-form.component')
+    }
+    ,
+    {
+        path: ':id/editCons',
+        loadComponent: () => import('./consulta/consulta-form/consulta-form.component')
+    }
+    ,
+    {
+        path: 'receta',
+        loadComponent: () => import('./receta/receta-list/receta-list.component')
+    }
+    ,
+    {
+        path: 'newReceta',
+        loadComponent: () => import('./receta/receta-form/receta-form.component')
+    }
+    ,
+    {
+        path: ':id/editReceta',
+        loadComponent: () => import('./receta/receta-form/receta-form.component')
+    },
     
+
+
+
+    {
+        path: '**',
+        redirectTo: 'dashboard'
+    }
     
 ];

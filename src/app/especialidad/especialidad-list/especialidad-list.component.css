@@ -1,31 +1,18 @@
 /* Estilo general para el contenedor */
-
 .container {
-
     background-color: rgba(255, 255, 255, 0.9); /* Color de fondo blanco con opacidad */
-
     border-radius: 8px; /* Bordes redondeados */
-
     padding: 20px; /* Espaciado interno */
-
     overflow: hidden; /* Para que los bordes redondeados se apliquen */
     box-shadow: 0 10px 60px rgba(59, 195, 236, 0.5); /* Sombra más pronunciada */
-
     transition: transform 0.3s; /* Transición para el contenedor */
-
     max-width: 1200px; /* Ancho máximo del contenedor */
-
     margin: 0 auto; /* Centrar el contenedor */
-
 }
 
-
 /* Efecto hover para el contenedor */
-
 .container:hover {
-
     transform: scale(1.02); /* Efecto de aumento al pasar el mouse */
-
 }
 
 /* Estilo para el encabezado */
@@ -40,34 +27,34 @@ h2:hover {
     color: #9b28dd9f; /* Color más brillante al pasar el mouse */
 }
 
-/* Estilo para la tabla */
-.table {
-    width: 100%; /* Ancho completo */
-    margin-top: 20px; /* Espaciado superior */
-    border-collapse: collapse; /* Colapsar bordes */
-    background-color: #ffffff; /* Color de fondo blanco */
+/* Estilo para las tarjetas */
+.card {
+    border: none; /* Sin borde */
     border-radius: 8px; /* Bordes redondeados */
-    overflow: hidden; /* Para que los bordes redondeados se apliquen */
-    box-shadow: 0 10px 60px rgba(59, 195, 236, 0.5); /* Sombra más pronunciada */
+    box-shadow: 0 4px 20px rgba(59, 195, 236, 0.2); /* Sombra suave */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
 }
 
-/* Estilo para las celdas de la tabla */
-.table th, .table td {
-    padding: 12px; /* Espaciado interno */
-    text-align: left; /* Alinear texto a la izquierda */
-    border-bottom: 1px solid rgb(59, 195, 236); /* Línea divisoria entre filas */
-    transition: background-color 0.3s; /* Transición para el fondo */
+/* Efecto hover para las tarjetas */
+.card:hover {
+    transform: translateY(-5px); /* Levantar la tarjeta al pasar el mouse */
+    box-shadow: 0 10px 40px rgba(59, 195, 236, 0.5); /* Sombra más pronunciada */
 }
 
-/* Estilo para el encabezado de la tabla */
-.table th {
-    background-color: rgb(59, 195, 236); /* Color de fondo para el encabezado */
-    color: white; /* Color del texto del encabezado */
+/* Estilo para el cuerpo de la tarjeta */
+.card-body {
+    padding: 20px; /* Espaciado interno */
 }
 
-/* Estilo para las filas al pasar el mouse */ 
-.table tr:hover {
-    background-color: rgba(37, 37, 37, 0.1); /* Color de fondo al pasar el mouse */
+/* Estilo para los títulos de las tarjetas */
+.card-title {
+    color: #00c3ff; /* Color del título */
+    font-weight: bold; /* Negrita */
+}
+
+/* Estilo para las descripciones de las tarjetas */
+.card-text {
+    color: #333; /* Color del texto */
 }
 
 /* Estilo para los botones */

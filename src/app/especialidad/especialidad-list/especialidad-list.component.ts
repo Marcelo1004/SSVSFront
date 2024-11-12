@@ -30,7 +30,7 @@ export default class EspecialidadListComponent implements OnInit{
     });
    }
 
-   deletePerm(especialidades:Especialidad)
+   deleteEsp(especialidades:Especialidad)
    {
      this.especialidadService.delete(especialidades.id)
      .subscribe(() =>{

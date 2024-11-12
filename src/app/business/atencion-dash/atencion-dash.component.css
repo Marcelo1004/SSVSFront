@@ -6,8 +6,8 @@
     overflow: hidden; /* Para que los bordes redondeados se apliquen */
     box-shadow: 0 10px 60px rgba(59, 195, 236, 0.5); /* Sombra más pronunciada */
     transition: transform 0.3s; /* Transición para el contenedor */
-    max-width: 1200px; /* Ancho máximo del contenedor */
-    margin: 0 auto; /* Centrar el contenedor */
+    max-width: 600px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Centrar el contenedor con un margen superior */
 }
 
 /* Efecto hover para el contenedor */
@@ -20,6 +20,7 @@ h2 {
     color: #00c3ff; /* Color para el texto */
     font-weight: bold; /* Negrita */
     transition: color 0.3s; /* Transición para el color */
+    text-align: center; /* Centrar el texto */
 }
 
 /* Efecto hover para el encabezado */
@@ -44,6 +45,7 @@ h2:hover {
 /* Estilo para el cuerpo de la tarjeta */
 .card-body {
     padding: 20px; /* Espaciado interno */
+    text-align: center; /* Centrar el contenido del cuerpo */
 }
 
 /* Estilo para los títulos de las tarjetas */
@@ -52,15 +54,11 @@ h2:hover {
     font-weight: bold; /* Negrita */
 }
 
-/* Estilo para las descripciones de las tarjetas */
-.card-text {
-    color: #333; /* Color del texto */
-}
-
 /* Estilo para los botones */
 .btn {
     margin: 0 5px; /* Espaciado entre botones */
     color: white; /* Color del texto de los botones */
+    background-color: #32CD32; /* Color de fondo del botón (rojo) */
     border: none; /* Sin borde */
     border-radius: 6px; /* Bordes redondeados */
     padding: 10px 15px; /* Espaciado interno */
@@ -71,11 +69,4 @@ h2:hover {
 .btn:hover {
     background-color: #9b28dd9f; /* Color más brillante al pasar el mouse */
     transform: translateY(-2px); /* Levantar el botón al pasar el mouse */
-}
-
-/* Estilo para el grupo de botones */
-.btn-group {
-    display: flex; /* Flex para alinear botones */
-    justify-content: flex-start; /* Alinear a la izquierda */
-    margin-top: 20px; /* Espaciado superior */
 }

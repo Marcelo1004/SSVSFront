@@ -1,0 +1,75 @@
+<div class="container">
+    <h2 class="mb-5"> 
+        @if(recetas){
+            Editar
+        }
+        @else {
+            Nueva
+        }
+        Receta
+    </h2>
+    <div class="row row-cols-3 justify-content-center">
+        @if(form)
+        {
+            <form [formGroup]="form" (ngSubmit)="save()">
+
+                
+
+                <div class="mb-3">
+                    <label for="indicaciones">Indicaciones</label>
+                    <textarea id="indicaciones" placeholder="Indicaciones" class="form-control"
+                    formControlName="indicaciones" rows="4"></textarea>
+                    <div *ngIf="form.get('indicaciones')?.hasError('required') && form.get('indicaciones')?.touched">
+                        <p class="invalid-feedback d-block">Las indicaciones son obligatorias</p>
+                    </div>
+                    <div *ngIf="form.get('indicaciones')?.hasError('minlength') && form.get('indicaciones')?.touched">
+                        <p class="invalid-feedback d-block">Introduce mínimo 10 caracteres</p>
+                    </div>
+                </div>
+
+                
+                <div class="mb-3">
+                    <label for="fechaInicio">Fecha de Inicio</label>
+                    <input id="fechaInicio" placeholder="Fecha de Inicio" class="form-control"
+                    formControlName="fechaInicio" >
+                    <div *ngIf="form.get('fechaInicio')?.hasError('required') && form.get('fechaInicio')?.touched">
+                        <p class="invalid-feedback d-block">Inserte una Fecha de Inicio</p>
+                    </div>
+                    <div *ngIf="form.get('fechaInicio')?.hasError('minlength') && form.get('fechaInicio')?.touched">
+                        <p class="invalid-feedback d-block">Debe tener al menos 10 caracteres</p>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="fechaFinal">Fecha Final</label>
+                    <input id="fechaFinal" placeholder="Fecha Final" class="form-control"
+                    formControlName="fechaFinal" >
+                    <div *ngIf="form.get('fechaFinal')?.hasError('required') && form.get('fechaFinal')?.touched">
+                        <p class="invalid-feedback d-block">Inserte una Fecha Final</p>
+                    </div>
+                    <div *ngIf="form.get('fechaFinal')?.hasError('minlength') && form.get('fechaFinal')?.touched">
+                        <p class="invalid-feedback d-block">Debe tener al menos 10 caracteres</p>
+                    </div>
+                </div>
+
+                
+
+                <div class="text-end d-flex justify-content-between">
+                    <button type="button" class="btn btn-danger" (click)="cancel()">
+                        Cancelar
+                    </button>
+                    <button class="btn btn-primary ms-2" type="submit">
+                        @if(recetas){
+                            Actualizar
+                        }
+                        @else {
+                            Crear 
+                        }
+                        Receta
+                    </button>
+                </div>
+            
+            </form>
+        }
+    </div>
+</div>

@@ -1,49 +1,35 @@
 <div class="container py-5">
     <h2 class="mb-5">Consulta</h2>
     
-    <div class="text-end">
+    <div class="text-end mb-3">
         <button class="btn btn-primary" routerLink="/newCons">
             Nueva Consulta
         </button>
     </div>
 
-    <table class="table table-hover">
-        <thead>
-            <tr>
-            <th>ID</th>
-            <th>FECHA</th>
-            <th>MOTIVO</th>
-            <th>DIAGNOSTICO</th>
-            <th>NOTAS</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-            @for(consulta of consultas;track consulta.id )
-            {
-                <tr>
-                    <td>{{consulta.id}}</td>
-                    
-                    <td>{{consulta.fecha | date: 'dd/MM/yyyy hh:mm a'}}</td>
-                    <td>{{consulta.motivo}}</td>
-                    <td>{{consulta.diagnostico}}</td>
-                    <td>{{consulta.notas}}</td>
-                    <td class="text-end">
-                        <div class="btn-group">
-                            <button class="btn btn-primary" [routerLink]="[consulta.id,'editCons']">
-                            Editar
-                        </button>
-                        <button class="btn btn-danger" (click)="deleteCons(consulta)" >
-                            Eliminar
-                        </button>
+    <div class="row">
+        @for(consulta of consultas; track consulta.id)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Consulta ID: {{ consulta.id }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Fecha: {{ consulta.fecha | date: 'dd/MM/yyyy hh:mm a' }}</h6>
+                        <p class="card-text"><strong>Motivo:</strong> {{ consulta.motivo }}</p>
+                        <p class="card-text"><strong>Diagnóstico:</strong> {{ consulta.diagnostico }}</p>
+                        <p class="card-text"><strong>Tratamiento:</strong> {{ consulta.tratamiento }}</p>
+                        <p class="card-text"><strong>Notas:</strong> {{ consulta.notas }}</p>
+                        <div class="btn-group" role="group">
+                            <button class="btn btn-primary" [routerLink]="['/', consulta.id, 'editCons']">
+                                Editar
+                            </button>
+                            <button class="btn btn-danger" (click)="deleteCons(consulta)">
+                                Eliminar
+                            </button>
                         </div>
-                    </td>
-                   
-                </tr>
-            }
-        </tbody>
-        
-    </table>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
-    
-    
+</div>

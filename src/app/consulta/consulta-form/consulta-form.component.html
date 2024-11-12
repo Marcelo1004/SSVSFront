@@ -1,0 +1,79 @@
+<div class="container">
+    <h2 class="mb-5"> 
+        @if(consulta){
+            Editar
+        }
+        @else {
+            Nuevo 
+        }
+        Consulta
+    </h2>
+    <div class="row row-cols-3 justify-content-center">
+        @if(form)
+        {
+            <form [formGroup]="form" (ngSubmit)="save()">
+
+                <div class="mb-3">
+                    <label for="motivo">Motivo</label>
+                    <input id="motivo" placeholder="Motivo" class="form-control"
+                    formControlName="motivo" >
+                    <div *ngIf="form.get('motivo')?.hasError('required') && form.get('motivo')?.touched">
+                        <p class="invalid-feedback d-block">Inserte un motivo</p>
+                    </div>
+                    <div *ngIf="form.get('motivo')?.hasError('minlength') && form.get('motivo')?.touched">
+                        <p class="invalid-feedback d-block">El motivo debe tener al menos 3 caracteres</p>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="diagnostico">Diagnostico</label>
+                    <textarea id="diagnostico" placeholder="Diagnostico" class="form-control"
+                    formControlName="diagnostico" rows="4"></textarea>
+                    <div *ngIf="form.get('diagnostico')?.hasError('required') && form.get('diagnostico')?.touched">
+                        <p class="invalid-feedback d-block">El diagnostico es obligatorio</p>
+                    </div>
+                    <div *ngIf="form.get('diagnostico')?.hasError('minlength') && form.get('diagnostico')?.touched">
+                        <p class="invalid-feedback d-block">Introduce mínimo 10 caracteres</p>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="tratamiento">Tratamiento</label>
+                    <textarea id="tratamiento" placeholder="Tratamiento" class="form-control"
+                    formControlName="tratamiento" rows="4"></textarea>
+                    <div *ngIf="form.get('tratamiento')?.hasError('required') && form.get('tratamiento')?.touched">
+                        <p class="invalid-feedback d-block">El tratamiento es obligatorio</p>
+                    </div>
+                    <div *ngIf="form.get('tratamiento')?.hasError('minlength') && form.get('tratamiento')?.touched">
+                        <p class="invalid-feedback d-block">Introduce mínimo 10 caracteres</p>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="notas">Notas</label>
+                    <textarea id="notas" type="text" placeholder="Notas" class="form-control"
+                    formControlName="notas" rows ="4"></textarea>
+                    <div *ngIf="form.get('notas')?.hasError('required') && form.get('notas')?.touched">
+                        <p class="invalid-feedback d-block">La nota es obligatoria</p>
+                    </div>
+                </div>
+
+                <div class="text-end d-flex justify-content-between">
+                    <button type="button" class="btn btn-danger" (click)="cancel()">
+                        Cancelar
+                    </button>
+                    <button class="btn btn-primary ms-2" type="submit">
+                        @if(consulta){
+                            Actualizar
+                        }
+                        @else {
+                            Crear 
+                        }
+                        Consulta
+                    </button>
+                </div>
+            
+            </form>
+        }
+    </div>
+</div>

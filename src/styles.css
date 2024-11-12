@@ -1,4 +1,7 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .carousel-caption {
     background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
@@ -14,3 +17,4 @@
     object-fit: cover; /* Ajusta la imagen para que cubra bien el espacio */
     height: 500px; /* Puedes ajustar la altura del carrusel */
   }
+
